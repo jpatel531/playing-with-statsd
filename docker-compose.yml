@@ -1,0 +1,21 @@
+version: "2"
+services:
+  graphite:
+    image: jpatel531/graphite
+    ports:
+      - "3000:80"
+      - "8125:8125"
+  postgres:
+    image: postgres
+    ports:
+      - "15432:5432"
+    environment:
+      - DEBUG=false
+
+      - DB_USER=postgres
+      - DB_PASS=
+
+      # TODO create graphite user?
+      # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-graphite-on-an-ubuntu-14-04-server
+  statsd:
+      image: jpatel531/statsd

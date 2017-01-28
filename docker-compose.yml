@@ -19,3 +19,5 @@ services:
       # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-graphite-on-an-ubuntu-14-04-server
   statsd:
       image: jpatel531/statsd
+      ports:
+        - "18125:8125/udp"
